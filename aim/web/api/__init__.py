@@ -28,6 +28,7 @@ def create_app():
     from aim.web.api.experiments.views import experiment_router
     from aim.web.api.projects.project import Project
     from aim.web.api.projects.views import projects_router
+    from aim.web.api.external.views import external_router
     from aim.web.api.reports.views import reports_router
     from aim.web.api.runs.views import add_api_routes, runs_router
     from aim.web.api.tags.views import tags_router
@@ -54,6 +55,7 @@ def create_app():
     api_app.include_router(projects_router, prefix='/projects')
     api_app.include_router(runs_router, prefix='/runs')
     api_app.include_router(tags_router, prefix='/tags')
+    api_app.include_router(external_router, prefix='/external')
     api_app.include_router(reports_router, prefix='/reports')
 
     base_path = os.environ.get(AIM_UI_BASE_PATH, '')

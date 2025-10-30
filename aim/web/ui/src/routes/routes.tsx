@@ -65,6 +65,13 @@ const Report = React.lazy(
   () => import(/* webpackChunkName: "Report" */ 'pages/Report/Report'),
 );
 
+const ExternalMetrics = React.lazy(
+  () =>
+    import(
+      /* webpackChunkName: "external-metrics" */ 'pages/ExternalMetrics/ExternalMetricsContainer'
+    ),
+);
+
 export interface IRoute {
   path: PathEnum;
   component:
@@ -258,6 +265,15 @@ const routes: { [key: string]: any } = {
     displayName: 'Report',
     isExact: true,
     title: pageTitlesEnum.REPORT,
+  },
+  EXTERNAL_METRICS: {
+    path: PathEnum.External_Metrics,
+    component: ExternalMetrics,
+    showInSidebar: true,
+    displayName: 'External Metrics',
+    icon: 'metrics',
+    isExact: true,
+    title: pageTitlesEnum.EXTERNAL_METRICS,
   },
 };
 

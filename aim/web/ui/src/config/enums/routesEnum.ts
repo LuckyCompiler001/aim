@@ -24,6 +24,7 @@ enum PathEnum {
   Reports = '/reports',
   Report = '/reports/:reportId',
   Report_Edit = '/reports/:reportId/edit',
+  External_Metrics = '/external-metrics',
 }
 
 export { PathEnum };
